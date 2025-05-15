@@ -12,27 +12,27 @@ graph TD
         C --> D[kube-apiserver]
         C --> E[kube-controller-manager]
         C --> F[kube-scheduler]
-        C --> G[etcd (Key-Value Store)]
+        C --> G[etcd - Key Value Store]
 
         D --> H[Admission Controllers]
-        H --> I[RBAC, Quotas, etc.]
+        H --> I[RBAC and Quotas]
 
-        D --> J[Operators (CRDs)]
+        D --> J[Operators and CRDs]
 
         D --> K[Compute Nodes]
         K --> L[Pods]
         L --> M[kubelet]
-        L --> N[CRI-O (Container Runtime)]
-        L --> O[CNI Plugins (SDN/OVN-K)]
+        L --> N[CRI-O - Container Runtime]
+        L --> O[CNI Plugins - SDN / OVN-K]
 
         K --> P[Persistent Volume Claim]
         P --> Q[Persistent Volume]
 
         subgraph Infrastructure Services
-            R[Monitoring (Prometheus, Alertmanager)]
-            S[Logging (Fluentd, Loki, Elasticsearch)]
+            R[Monitoring - Prometheus]
+            S[Logging - Fluentd / Elasticsearch]
             T[Image Registry]
-            U[GitOps (ArgoCD)]
+            U[GitOps - ArgoCD]
         end
 
         C --> R
@@ -44,10 +44,6 @@ graph TD
     T --> V[Container Images]
     U --> J
 
-    style G fill:#f9f,stroke:#333,stroke-width:1px
-    style C fill:#ccf,stroke:#333,stroke-width:1px
-    style K fill:#cfc,stroke:#333,stroke-width:1px
-    style InfrastructureServices fill:#ffe,stroke:#333,stroke-width:1px
 ```
 
 
